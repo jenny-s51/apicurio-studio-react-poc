@@ -127,7 +127,7 @@ export const ImportApi = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const urlValue = event.target.importurl.value;
-    console.log('what is event' + urlValue);
+    console.log('what is event? ' + urlValue);
     if(importType === options[0].value) {
       if (isValidTextInput1) {
         console.log('does it try to call the first api');
@@ -147,7 +147,7 @@ export const ImportApi = () => {
   const importApiObject: ImportApi = { url: "", data: "" };
 
     if(api) {
-      importApiObject.url = JSON.stringify(api);
+      importApiObject.url = JSON.stringify(api).replace(/["']/g, "");
     }
     try {
       importApiObject.data = Base64.encode(api);

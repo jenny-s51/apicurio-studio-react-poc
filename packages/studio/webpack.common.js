@@ -7,6 +7,11 @@ module.exports = {
   entry: {
     app: './src/index.tsx'
   },
+  devServer: {
+    headers: { 
+      "Access-Control-Allow-Origin": "*"
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'

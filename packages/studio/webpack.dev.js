@@ -17,7 +17,10 @@ module.exports = merge(common, {
     historyApiFallback: true,
     hot: true,
     overlay: true,
-    open: true
+    open: true,
+    headers: { 
+      "Access-Control-Allow-Origin": "*"
+    }
   },
   module: {
     rules: [

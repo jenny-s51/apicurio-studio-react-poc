@@ -142,9 +142,11 @@ export abstract class AbstractHubService {
 
     protected httpPutWithReturn<I, O>(url: string, data: I, options: any, successCallback?: (data: any) => any): Promise<O> {
       
+        console.log('url is ' + url)
         console.log('does it make it to the put with return');
-        console.log('what is data' + data);
         const stringify = JSON.stringify(data);
+        console.log('what is data ' + stringify);
+
         const config: AxiosRequestConfig = {...{
             method: 'put',
             url: url,
